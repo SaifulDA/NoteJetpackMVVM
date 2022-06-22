@@ -1,0 +1,60 @@
+
+buildscript {
+    ext {
+        compileSdkVersion = 30
+        minSdkVersion = 21
+        targetSdkVersion = 30
+
+        playServicesAuth = "19.0.0"
+        firebaseAuth = "20.0.1"
+        firebaseCore = "18.0.0"
+        firebaseFirestore = "22.0.1"
+        constraintLayoutVersion = '2.1.0-alpha2'
+        room = '2.3.0-alpha04'
+        coroutinesVersion = "1.4.1"
+        glideVersion = '4.8.0'
+        gradleVersion = '3.3.2'
+        junitVersion = '5.3.1'
+        kotlinVersion = '1.4.10'
+        ktlintVersion = '0.30.0'
+        ktxVersion = '1.3.2'
+        lifecycleVersion = '2.2.0'
+        materialVersion = '1.2.1'
+        navigationVersion = '2.3.2'
+        recyclerViewVersion = '1.2.0-beta01'
+        roomVersion = '2.1.0-alpha04'
+        runnerVersion = '1.0.1'
+        supportLibraryVersion = '1.2.0'
+    }
+
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath 'com.google.gms:google-services:4.3.4'
+        classpath 'io.fabric.tools:gradle:1.28.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+

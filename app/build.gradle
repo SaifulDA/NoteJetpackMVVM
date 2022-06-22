@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'io.fabric'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    defaultConfig {
+        applicationId "com.wiseassblog.jetpacknotesmvvmkotlin"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation "androidx.appcompat:appcompat:$rootProject.supportLibraryVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+
+
+    implementation "androidx.core:core-ktx:$rootProject.ktxVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$rootProject.kotlinVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutinesVersion"
+
+    implementation "com.google.firebase:firebase-core:$rootProject.firebaseCore"
+    implementation "com.google.firebase:firebase-auth:$rootProject.firebaseAuth"
+    implementation "com.google.android.gms:play-services-auth:$rootProject.playServicesAuth"
+
+    implementation "com.google.firebase:firebase-firestore:$rootProject.firebaseFirestore"
+    implementation "androidx.room:room-runtime:$rootProject.room"
+    implementation "androidx.room:room-ktx:$rootProject.room"
+
+
+    kapt "androidx.room:room-compiler:$rootProject.room"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$rootProject.junitVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:$rootProject.junitVersion"
+}
+
+apply plugin: 'com.google.gms.google-services'
